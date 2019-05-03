@@ -1,1 +1,13 @@
 *{margin:0; padding:0;}
+#menu{
+  display: block;
+  position: absolute;
+  height: 50px;
+  width: 100%;
+  background-color: blue;
+}
+#btn{
+  display: block;
+  position: absolute;
+  color: white;
+}
