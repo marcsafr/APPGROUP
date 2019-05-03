@@ -21,11 +21,28 @@ body{
 .calendar{
   display: block;
   position: absolute;
-  height: 200px;
-  width: 200px;
+  height: 245px;
+  width: 245px;
   border-radius: 50%;
-  border: 10px solid #ff0666;
   transform: translate(-50%, -50%);
   top:50%;
   left: 20%;
+  cursor: pointer;
+  background-color: green;
+}
+.calendarf:hover{
+  filter: blur(8px);
+   -webkit-filter: blur(8px);
+}
+.calendarf{
+  display: block;
+  position: absolute;
+  height: 250px;
+  width: 250px;
+  border-radius: 50%;
+  border: 15px solid #ff0666;
+  transform: translate(-50%, -50%);
+  top:50%;
+  left: 20%;
+  cursor: pointer;
 }
