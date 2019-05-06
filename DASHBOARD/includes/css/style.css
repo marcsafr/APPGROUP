@@ -30,21 +30,18 @@ body{
   cursor: pointer;
   background-color: green;
 }
-.calendarf:hover{
-  filter: blur(8px);
-   -webkit-filter: blur(8px);
-}
-.calendarf{
+
+.video{
   display: block;
   position: absolute;
-  height: 250px;
-  width: 250px;
+  height: 245px;
+  width: 245px;
   border-radius: 50%;
-  border: 15px solid #ff0666;
   transform: translate(-50%, -50%);
   top:50%;
-  left: 20%;
+  left: 50%;
   cursor: pointer;
+  background-color: red;
 }
 
 #lateralfull{

@@ -1,11 +1,54 @@
+html {
+  box-sizing: border-box;
+  font-size: 10px;
+}
+
+body {
+  font-family: -apple-system, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  color: #333;
+  font-size: 1.6rem;
+  background-color: #CECACA;
+  -webkit-font-smoothing: antialiased;
+}
+
+a,
+a:visited {
+  color: #0A9297;
+}
+
+footer {
+  text-align: center;
+  margin: 1.6rem 0;
+}
+
+h1 {
+  text-align: center;
+}
+
+.container {
+  width: 96%;
+  margin: 1.6rem auto;
+  max-width: 42rem;
+  text-align: center;
+}
+
+.demo-picked {
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.demo-picked span {
+  font-weight: bold;
+}
+
 :root {
   --vcal-bg-color: #fff;
   --vcal-border-radius: 0;
   --vcal-border-color: #e7e9ed;
-  --vcal-today-bg-color: #10989E;
-  --vcal-today-color: #fff;
-  --vcal-selected-bg-color: #E7E9ED;
-  --vcal-selected-color: #333;
+  --vcal-today-bg-color: #33FF5B;
+  --vcal-today-color: #33FF5B;
+  --vcal-selected-bg-color: #33FF5B;
+  --vcal-selected-color: #33FF5B;
 }
 
 #v-cal *, #v-cal *:before, #v-cal *:after {
@@ -112,3 +155,36 @@
   cursor: not-allowed;
   opacity: 0.5;
 }
+
+.form{
+	margin: 0 0 20px 0;
+}
+
+form{
+	display:flex;
+	position:relative;
+	width:calc(100% - 40px);
+	padding:20px;
+	height:auto;
+	background-color:grey;
+	border-radius:5px;
+	justify-content: space-between;
+	flex-direction: row;
+	align-items: center;
+}
+
+p{
+  display: block;
+  position: relative;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.post{
+  display: block;
+  position: relative;
+  transform: translate(-50%, -50%);
+  left: 50vw;
+  top: -60vh;
+}
+
