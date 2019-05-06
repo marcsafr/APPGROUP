@@ -1,64 +1,12 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?php ?>
 <!DOCTYPE html>
-<html>
-
+<html lang="ca">
 <head>
 	<title>Calendari</title>
 	<meta content="IE=edge" http-equiv="X-UA-Compatible">
 	<meta content="width=device-width, initial-scale=1" name="viewport">
-	<meta content="Ignasi Prat, Pol Torrent" name="author">
 	<link href="calendari.css" rel="stylesheet">
-	<style>
-		html {
-			box-sizing: border-box;
-			font-size: 10px;
-		}
-
-		body {
-			font-family: -apple-system, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-			color: #333;
-			font-size: 1.6rem;
-			background-color: #CECACA;
-			-webkit-font-smoothing: antialiased;
-		}
-
-		.logo {
-			margin: 1.6rem auto;
-			text-align: center;
-		}
-
-		a,
-		a:visited {
-			color: #0A9297;
-		}
-
-		footer {
-			text-align: center;
-			margin: 1.6rem 0;
-		}
-
-		h1 {
-			text-align: center;
-		}
-
-		.container {
-			width: 96%;
-			margin: 1.6rem auto;
-			max-width: 42rem;
-			text-align: center;
-		}
-
-		.demo-picked {
-			font-size: 1.2rem;
-			text-align: center;
-		}
-
-		.demo-picked span {
-			font-weight: bold;
-		}
-	</style>
 </head>
-
 <body>
 	<div class="container">
 			<g fill="none">
@@ -76,9 +24,7 @@
 				  fill="#000" />
 			</g>
 		</svg>
-
 		<h1>Calendari JS</h1>
-
 		<div id="v-cal">
 			<div class="vcal-header">
 				<button class="vcal-btn" data-calendar-toggle="previous">
@@ -90,8 +36,6 @@
 				<div class="vcal-header__label" data-calendar-label="month">
 					Maig 2019
 				</div>
-
-
 				<button class="vcal-btn" data-calendar-toggle="next">
 					<svg height="24" version="1.1" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 						<path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z"></path>
@@ -109,17 +53,12 @@
 			</div>
 			<div class="vcal-body" data-calendar-area="month"></div>
 		</div>
-
 		<p class="demo-picked">
 			Data escollida:
 			<span data-calendar-label="picked"></span>
 		</p>
-
-		<footer>
-			<a href="https://github.com/marcsafr/APPGROUP/blob/master/calendari.html">GitHub</a>
-		</footer>
 	</div>
-	<script src="dist/vanillaCalendar.js" type="text/javascript"></script>
+	<script src="calendari.js" type="text/javascript"></script>
 	<script>
 		window.addEventListener('load', function () {
 			vanillaCalendar.init({
@@ -127,6 +66,76 @@
 			});
 		})
 	</script>
-</body>
+	<?php
 
+	$servername = "localhost";
+	$username = "root";
+	$password = "root";
+	$dbname = "simple";
+
+
+	$conn = new mysqli($servername, $username, $password);
+
+	if ($conn->connect_error) {
+	  die($missatge01 = "<span style='color:#33FF5B;'>Status Servidor</span>&nbsp;&xrarr; " . $conn->connect_error);
+	}
+
+	  $missatge01 = "<span style='color:#33FF5B;'>Status Servidor</span>&nbsp;&xrarr; Connexió establerta amb el servidor";
+
+
+	  $sql = "CREATE DATABASE calendari";
+	  if ($conn->query($sql) === TRUE) {
+	      $missatge02 = "<span style='color:#33FF5B;'>Status Dbase</span>&nbsp;&xrarr; La Base de dades s'ha creat correctament.";
+	  } else {
+	      $missatge02 = "<span style='color:#33FF5B;'>Status Dbase</span>&nbsp;&xrarr; ". $conn->error;
+
+	      $conn = new mysqli($servername, $username, $password, $dbname);
+
+	      $sql = "CREATE TABLE taula_calendari (
+	      id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+	      esdeveniment VARCHAR(30) NOT NULL,
+	      link VARCHAR(50),
+	      data DATE
+	      )";
+
+	      if ($conn->query($sql) === TRUE) {
+	          $missatge03 = "<span style='color:#33FF5B;'>Status Taula</span>&nbsp;&xrarr; La Taula s'ha creat satisfactòriament";
+	      } else {
+	          $missatge03 = "<span style='color:#33FF5B;'>Status Taula</span>&nbsp;&xrarr; ". $conn->error;
+	    }
+	  }
+
+	  $sql = "SELECT * FROM taula_calendari";
+	  if($result = mysqli_query($conn, $sql)){
+	  if (mysqli_num_rows($result) > 0) {
+
+	      while($row = mysqli_fetch_array($result)) {
+	          $continguts = "<tr><td class='id'>" . $row["id"]. "</td><td class='link' onclick=window.open('" . $row["link"]. "','_blank')>" . $row["esdeveniment"]. "</td><td class='data'>" . $row["data"] . "</td></tr>";
+	      }
+	      mysqli_free_result($result);
+	  }
+	  } else{
+	  echo "ERROR: Could not able to execute $sql. " . mysqli_error($conn);
+	  }
+	mysqli_close($conn);
+	?>
+
+	<div class="post">
+	  <p><?php echo $missatge01 ?></p>
+	  <p><?php echo $missatge02 ?></p>
+	  <p><?php echo $missatge03 ?></p>
+	</div>
+	<div class="form">
+	    <label for="esdeveniment">Esdeveniment</label>
+	    <input name="esdeveniment" id="esdeveniment" type="text" maxlength="45" />
+	    <label for="hora">Hora</label>
+	    <input name="hora" id="hora" type="time" />
+	    <input type="submit" value="Crea esdeveniment" />
+	  </form>
+	  <table>
+	  <?php echo $continguts ?>
+	  </table>
+	</div>
+</body>
 </html>
+
