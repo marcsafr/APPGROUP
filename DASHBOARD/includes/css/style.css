@@ -61,7 +61,7 @@ body{
   position: absolute;
   height: 100vh;
   width: 350px;
-  background-color: red;
+  background-color: #003366;
 }
 #btna{
   display: flex;
@@ -71,5 +71,4 @@ body{
   margin-left: 12px;
   margin-top: 12px;
   cursor: pointer;
-
 }
