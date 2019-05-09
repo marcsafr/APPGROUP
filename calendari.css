@@ -177,13 +177,6 @@ form{
 	align-items: center;
 }
 
-p{
-  display: block;
-  position: relative;
-  justify-content: space-between;
-  flex-direction: column;
-}
-
 .post{
   display: block;
   position: relative;

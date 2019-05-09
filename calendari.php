@@ -126,6 +126,7 @@
 	  <p><?php echo $missatge03 ?></p>
 	</div>
 	<div class="form">
+		<form action="formaction.php" method="post">
 	    <label for="esdeveniment">Esdeveniment</label>
 	    <input name="esdeveniment" id="esdeveniment" type="text" maxlength="45" />
 	    <label for="hora">Hora</label>
