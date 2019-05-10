@@ -59,7 +59,7 @@ body{
 /******* B O T O N E S  A P L I C A C I O N E S ******/
 
     /*********** C I R C U L O   1 **********/
-.circle1{
+.circle1,.cricle2,.circle3,.circle4{
   display: block;
   position: absolute;
   height: 100px;
@@ -73,9 +73,10 @@ body{
   background-color:#cf4436;
   -webkit-box-shadow: 0px 0px 50px 30px rgba(207,68,54,0.25);
   -moz-box-shadow: 0px 0px 50px 30px rgba(207,68,54,0.25);
-  box-shadow: 0px 0px 50px 30px rgba(207,68,54,0.25);}
+  box-shadow: 0px 0px 50px 30px rgba(207,68,54,0.25);
+-webkit-animation: spin-right}
 
-  .pulse1{
+  .pulse1,.pulse2,.pulse3,.pulse4{
     margin: -2px 0 0 -2px;
     position: relative;
     height: 100px;
@@ -86,6 +87,7 @@ body{
     -webkit-animation: pulsate 3s ease-out;
     -webkit-animation-iteration-count: infinite;
     }
+
     @-webkit-keyframes pulsate {
       0% {
         transform: scale(0.1, 0.1);
@@ -99,135 +101,45 @@ body{
         opacity: 0.0;
       }
     }
-    /*******************************************/
-
-    /*********** C I R C U L O   2 **********/
-.circle2{
+#wrapp{
   display: block;
   position: absolute;
-  height: 100px;
-  width: 100px;
-  border-radius: 50%;
-  z-index: 777;
-  transition: all 350ms ease-in-out;
-  top:calc(20% - 50px);
-  left:85%;
-  cursor: pointer;
-  background-color:#cf4436;
-  -webkit-box-shadow: 0px 0px 50px 30px rgba(207,68,54,0.25);
-  -moz-box-shadow: 0px 0px 50px 30px rgba(207,68,54,0.25);
-  box-shadow: 0px 0px 50px 30px rgba(207,68,54,0.25);}
+  transform: translate(-50%,-50%);
+  height: 500px;
+  width: 500px;
+  top: 50%;
+  left:50%;
+}
 
-  .pulse2{
-    margin: -2px 0 0 -2px;
-    position: relative;
-    height: 100px;
-    width: 100px;
-    opacity: 0;
-    border: 1.5px solid #cf4436;
-    border-radius: 50%;
-    -webkit-animation: pulsate 3s ease-out;
-    -webkit-animation-iteration-count: infinite;
-    }
-    @-webkit-keyframes pulsate {
-      0% {
-        transform: scale(0.1, 0.1);
-        opacity: 0.0;
-      }
-      80% {
-        opacity: 0.30;
-      }
-      100% {
-        transform: scale(1.5, 1.5);
-        opacity: 0.0;
-      }
-    }
-    /*******************************************/
-
-    /*********** C I R C U L O   1 **********/
-.circle3{
-  display: block;
+.outer-orbit {
   position: absolute;
-  height: 100px;
-  width: 100px;
-  border-radius: 50%;
-  z-index: 777;
-  transition: all 350ms ease-in-out;
-  top:calc(85% - 50px);
-  left:5%;
-  cursor: pointer;
-  background-color:#cf4436;
-  -webkit-box-shadow: 0px 0px 50px 30px rgba(207,68,54,0.25);
-  -moz-box-shadow: 0px 0px 50px 30px rgba(207,68,54,0.25);
-  box-shadow: 0px 0px 50px 30px rgba(207,68,54,0.25);}
+  top: 0;
+  left: 0;
+  width: 500px;
+  height: 500px;
+  border-radius: 100%;
+  -webkit-animation: spin-right 20s linear infinite;
+  animation: spin-right 20s linear infinite;
+}
 
-  .pulse3{
-    margin: -2px 0 0 -2px;
-    position: relative;
-    height: 100px;
-    width: 100px;
-    opacity: 0;
-    border: 1.5px solid #cf4436;
-    border-radius: 50%;
-    -webkit-animation: pulsate 3s ease-out;
-    -webkit-animation-iteration-count: infinite;
-    }
-    @-webkit-keyframes pulsate {
-      0% {
-        transform: scale(0.1, 0.1);
-        opacity: 0.0;
-      }
-      80% {
-        opacity: 0.30;
-      }
-      100% {
-        transform: scale(1.5, 1.5);
-        opacity: 0.0;
-      }
-    }
-    /*******************************************/
 
-    /*********** C I R C U L O   1 **********/
-.circle4{
-  display: block;
+.outer-orbit-cirlces {
   position: absolute;
-  height: 100px;
-  width: 100px;
-  border-radius: 50%;
-  z-index: 777;
-  transition: all 350ms ease-in-out;
-  top:calc(85% - 50px);
-  left:85%;
-  cursor: pointer;
-  background-color:#cf4436;
-  -webkit-box-shadow: 0px 0px 50px 30px rgba(207,68,54,0.25);
-  -moz-box-shadow: 0px 0px 50px 30px rgba(207,68,54,0.25);
-  box-shadow: 0px 0px 50px 30px rgba(207,68,54,0.25);}
+  top: -17px;
+  left: 125px;
+  height: 30px;
+  width: 30px;
+  border-radius: 100%;
+  background-color: #00FFCA;
+}
 
-  .pulse4{
-    margin: -2px 0 0 -2px;
-    position: relative;
-    height: 100px;
-    width: 100px;
-    opacity: 0;
-    border: 1.5px solid #cf4436;
-    border-radius: 50%;
-    -webkit-animation: pulsate 3s ease-out;
-    -webkit-animation-iteration-count: infinite;
-    }
-    @-webkit-keyframes pulsate {
-      0% {
-        transform: scale(0.1, 0.1);
-        opacity: 0.0;
-      }
-      80% {
-        opacity: 0.30;
-      }
-      100% {
-        transform: scale(1.5, 1.5);
-        opacity: 0.0;
-      }
-    }
-    /*******************************************/
-
-/****************************************************/
+/* ---------- Animation ---------- */
+@-webkit-keyframes spin-right {
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
