@@ -1,6 +1,7 @@
 *{margin:0; padding:0;}
 body{
   background-color:  	#2c3e50;
+  overflow: hidden;
 }
 #menu{
   display: block;
@@ -77,20 +78,24 @@ body{
   -webkit-animation: spin-right;
   animation: float 2.5s ease-in-out infinite;}
   .circle1{
-    top:-20px;
+    top:-40px;
     left:40%;
   }
   .circle2{
     top:40%;
     left:90%;
+    background-color:#00F7EF;
   }
   .circle3{
-    top:85%;
+    top:90%;
     left:40%;
+    background-color:#20D65C;
   }
   .circle4{
     top:40%;
-    left:-50px;}
+    left:-50px;
+    background-color:#DD2553;
+  }
 
   .pulse1,.pulse2,.pulse3,.pulse4{
     margin: -2px 0 0 -2px;
@@ -103,6 +108,10 @@ body{
     -webkit-animation: pulsate 3s ease-out;
     -webkit-animation-iteration-count: infinite;
     }
+    .pulse1{background-color:#cf4436;}
+    .pulse2{background-color:#00F7EF;}
+    .pulse3{background-color:#20D65C;}
+    .pulse4{background-color:#DD2553;}
 
     @-webkit-keyframes pulsate {
       0% {
