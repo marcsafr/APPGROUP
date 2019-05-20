@@ -23,7 +23,7 @@
 	if (!$conn) {
 		die("Connection failed: " . mysqli_connect_error());
 	}
-	
+
 	// Query to check if the email already exist
 	$checkEmail = "SELECT * FROM users WHERE Email = '$_POST[email]' ";
 
@@ -39,8 +39,8 @@
 					<p>That email is already in our database.</p>
 					<p><a href='login.html'>Please login here</a></p>
 				</div>";
-	} else {	
-	
+	} else {
+
 	/*
 	If the email don't exist, the data from the form is sended to the
 	database and the account is created
@@ -48,20 +48,20 @@
 	$name = $_POST['name'];
 	$email = $_POST['email'];
 	$pass = $_POST['password'];
-	
+
 	// The password_hash() function convert the password in a hash before send it to the database
 	$passHash = password_hash($pass, PASSWORD_DEFAULT);
-	
+
 	// Query to send Name, Email and Password hash to the database
 	$query = "INSERT INTO users (Name, Email, Password) VALUES ('$name', '$email', '$passHash')";
 
 	if (mysqli_query($conn, $query)) {
 		echo "<div class='alert alert-success mt-4' role='alert'><h3>Your account has been created.</h3>
-		<a class='btn btn-outline-primary' href='login.html' role='button'>Login</a></div>";		
+		<a class='btn btn-outline-primary' href='login.html' role='button'>Login</a></div>";
 		} else {
 			echo "Error: " . $query . "<br>" . mysqli_error($conn);
-		}	
-	}	
+		}
+	}
 	mysqli_close($conn);
 	?>
 </div>
