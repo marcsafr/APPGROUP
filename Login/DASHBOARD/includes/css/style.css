@@ -112,6 +112,15 @@ i{color:white;}
 
   }
 
+  div.circle1 div.calendar{
+    display:block;
+    position:absolute;
+    width:auto;
+    height:auto;
+    top:40%;
+    left:45%;
+  }
+
   .pulse1,.pulse2,.pulse3,.pulse4{
     margin: -2px 0 0 -2px;
     position: relative;
@@ -123,7 +132,7 @@ i{color:white;}
     -webkit-animation: pulsate 3s ease-out;
     -webkit-animation-iteration-count: infinite;
     }
-  .pulse1{background-color: #8b03ff;}
+.pulse1{background-color: #8b03ff;}
 .pulse2{border: 1.5px solid#00F7EF;background-color:#00f7ef}
 .pulse3{border: 1.5px solid#20D65C;background-color:#20d65c}
 .pulse4{border: 1.5px solid#e20000;background-color:#e20000}
