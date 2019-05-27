@@ -121,6 +121,35 @@ i{color:white;}
     left:45%;
   }
 
+  div.circle2 div.calculator{
+    display: block;
+    position: absolute;
+    width: auto;
+    height: auto;
+    top:40%;
+    left:45%;
+  }
+  div.circle3 div.contacts{
+    display: block;
+    position: absolute;
+    width: auto;
+    height: auto;
+    top:40%;
+    left:45%;
+  }
+  div.circle4 div.player{
+    display: block;
+    position: absolute;
+    width: auto;
+    height: auto;
+    top:40%;
+    left:45%;
+  }
+  div#wrapp i{
+    color:black;
+    font-weight: bold;
+  }
+
   .pulse1,.pulse2,.pulse3,.pulse4{
     margin: -2px 0 0 -2px;
     position: relative;
